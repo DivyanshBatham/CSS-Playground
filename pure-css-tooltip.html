@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pure CSS Tooltip</title>
+    <style>
+        body {
+            height: 100vh;
+            width: 100vw;
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: whitesmoke;
+        }
+
+        ::selection {
+            background: crimson;
+        }
+
+        h1 {
+            position: relative;
+            background: orangered;
+        }
+
+        /* h1:hover::after { */
+        h1::after {
+            content: attr(data-tooltip);
+            background: crimson;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            display: block;
+            position: absolute;
+            left: 50%;            
+        }
+
+        
+    </style>
+</head>
+<body>
+    <h1 class="tooltip" data-tooltip="My Cool Tooltip" >Tooltip with pure CSS!</h1>
+</body>
+</html>

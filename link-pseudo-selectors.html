@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CSS Link Pseudo Selectors</title>
+    <style>
+        .button {
+            background: orangered;
+            width: 100%;
+            height: 50px;            
+            /* Necessary CSS: */
+            position: relative;
+            overflow: hidden;
+        }
+ 
+        a {
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-family: sans-serif;
+
+            /* Necessary CSS: */
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            z-index: 1;
+        }
+
+        .button::after {
+            position: absolute;
+            content: '';
+            background: greenyellow;
+            width: 100%;
+            height: 100%;
+            display: block;
+            top: 100%;
+            transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
+        }
+
+        .button:hover::after {
+            top: 0px;
+        }
+
+        .button:active {
+            margin-top: 1rem;
+        }
+
+        /* .skew-div {
+            height: 50px;
+            background: rebeccapurple;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transform: skew(15deg, 0);
+        }
+
+        .skew-div::after {
+            content: "HE";
+
+            position: relative;
+            overflow: hidden;
+        } */
+
+    </style>
+</head>
+
+<body>
+    <div class="button">
+        <a href="#">background slide up</a>
+    </div>
+
+    <!-- <div class="skew-div">
+        Skew
+    </div> -->
+</body>
+
+</html>
