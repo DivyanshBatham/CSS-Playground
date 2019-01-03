@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Underline Hover Effect</title>
+    <style>
+        body {
+            height: 100vh;
+            width: 100vw;
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: whitesmoke;
+        }
+
+        h1 {
+            position: relative;
+            cursor: pointer;
+        }
+
+        h1:before {
+            content: "";
+            height: 0.3rem;
+            width: 0px;
+            background: #dc143c;
+            display: block;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            transition: all 0.5s ;
+        }
+
+        h1:hover::before {
+            left: 0;
+            width: 100%;
+        }
+
+        ::selection {
+            background: #F62F57;
+            color: white;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>Underline Hover Effect!</h1>
+</body>
+
+</html>
