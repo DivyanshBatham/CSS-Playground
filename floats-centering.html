@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Floats</title>
+    <style>
+        /* Variables: */
+        :root {
+            --global-var: "value";
+            /* These are global variables, since :root refers to html unless XML */
+        }
+
+        .columns {
+            --n: 4;
+            /* .columns is the scope of this variable. */
+        }
+
+
+        /* Styles: */
+        body {
+            font-family: sans-serif;
+            background: whitesmoke;
+            padding: 5rem;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .columns {
+            margin: 2rem;
+        }
+
+        .column {
+            background: lightgray;
+            float: left;
+
+            /* (100% - 2n(margin%) - 2n(padding%))/n */
+            width: calc((100% - 2%*var(--n) - 2%*var(--n))/var(--n));
+            margin: 1%;
+            padding: 1%;
+
+        }
+
+        /* Clearing floats: */
+        .columns::after {
+            content: "";
+            clear: both;
+            display: block;
+        }
+
+        .cleared {
+            background: crimson;
+            color: white;
+            padding: 1rem;
+        }
+
+        .float-right {
+            float: right;
+        }
+
+        .float-right::after {
+            content: "";
+            clear: both;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="float-right">
+        *Just kidding
+    </div>
+    <h1>Centering with Floats (Who needs flexbox?)*</h1>
+
+    <div class="columns">
+        <div class="column">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+        <div class="column">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+        <div class="column">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+        <div class="column">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+    </div>
+    <div class="cleared">
+        Floats are perfectly cleared.
+    </div>
+</body>
+
+</html>
